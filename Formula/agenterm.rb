@@ -8,12 +8,12 @@ class Agenterm < Formula
   depends_on "python@3.12"
 
   def install
-    # until real code ships, install a tiny stub executable
-    (bin/"agenterm").write <<~EOS
+    (buildpath/"agenterm").write <<~EOS
       #!/bin/sh
       echo "Agenterm placeholder – real release coming soon"
     EOS
-    bin.install "agenterm"
+    chmod 0755, buildpath/"agenterm"
+    bin.install buildpath/"agenterm"
   end
 
   def caveats

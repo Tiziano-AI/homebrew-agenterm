@@ -2,7 +2,7 @@ class Agenterm < Formula
   desc     "Terminal cockpit for multi-agent AI workflows (placeholder)"
   homepage "https://github.com/Tiziano-AI/agenterm"
   url      "https://files.pythonhosted.org/packages/source/a/agenterm/agenterm-0.0.0a0.tar.gz"
-  sha256   "<SHA256 of that tar.gz>"
+  sha256   "1259f5355ad589fcff9db953742c898ddf297682b3ba177ddf71adf0415e45c4"
   license  "MIT"
 
   depends_on "python@3.12"

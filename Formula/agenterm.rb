@@ -3,8 +3,8 @@ class Agenterm < Formula
 
   desc     "Terminal-native agent runtime with persistent sessions, branching, and MCP"
   homepage "https://github.com/Tiziano-AI/agenterm"
-  url      "https://files.pythonhosted.org/packages/44/50/58d0f8601380dbfe66e4bd96bf602513ee9773021dc03b5f7489545f5855/agenterm-0.1.8.tar.gz"
-  sha256   "4ea1402ee899a8b68fb1643b53fd15af968999318b6766cac434bda8f79a0b6d"
+  url      "https://files.pythonhosted.org/packages/82/2b/dfb54bb48cf7f0ac784c6587c5d37cb9929258f51b95f3663dc0efb41ef1/agenterm-0.2.0.tar.gz"
+  sha256   "10e7756bb7a242a9d43ac032e7731dbec4b8f3b89fa5b4a6d3382474ff900e35"
   license  "MIT"
 
   depends_on "python@3.12"
@@ -13,9 +13,7 @@ class Agenterm < Formula
   depends_on "ripgrep"
   depends_on "fd"
   depends_on "bat"
-  depends_on "difftastic"
-  depends_on "sd"
-  depends_on "ast-grep"
+  depends_on "tree"
 
   def install
     virtualenv_install_with_resources

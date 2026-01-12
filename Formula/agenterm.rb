@@ -8,6 +8,7 @@ class Agenterm < Formula
   license  "MIT"
 
   depends_on "python@3.12"
+  depends_on "rust" => :build  # cryptography, pydantic-core, tiktoken, tokenizers, rpds-py
 
   # Rust CLI tools used by agenterm's function tools
   depends_on "ripgrep"

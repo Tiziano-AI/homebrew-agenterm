@@ -1,10 +1,8 @@
 class Agenterm < Formula
-  include Language::Python::Virtualenv
-
   desc     "Terminal-native agent runtime with persistent sessions, branching, and MCP"
   homepage "https://github.com/Tiziano-AI/agenterm"
-  url      "https://files.pythonhosted.org/packages/04/f6/db2a0597954c8e4bfc5da9101b1d3db5abcec9c498c533cc24bc34362683/agenterm-0.3.0.tar.gz"
-  sha256   "2ddf58fffa0119fd1bdd2c5f5b4da223a16b2c7343970fed40c6428ef4c6819c"
+  url      "https://files.pythonhosted.org/packages/1b/dc/3efc95223aee1ccc53de77570d24304cec2ea19ba906adb80a2449d9ab9d/agenterm-0.3.1.tar.gz"
+  sha256   "9a5e1a3b46bd7d30a75493411175ba990c964303765298cde1226e4f44661df2"
   license  "MIT"
 
   depends_on "python@3.12"
@@ -16,7 +14,14 @@ class Agenterm < Formula
   depends_on "tree"
 
   def install
-    virtualenv_install_with_resources
+    # Create virtualenv WITH pip (not Homebrew's --without-pip default)
+    system Formula["python@3.12"].opt_bin/"python3.12", "-m", "venv", libexec
+
+    # Install from PyPI using pre-built wheels (fast, no compilation)
+    system libexec/"bin/pip", "install", "--prefer-binary", "agenterm==#{version}"
+
+    # Symlink the CLI entrypoint
+    bin.install_symlink libexec/"bin/agenterm"
   end
 
   test do

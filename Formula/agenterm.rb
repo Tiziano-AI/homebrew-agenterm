@@ -1,8 +1,8 @@
 class Agenterm < Formula
   desc     "Terminal-native agent runtime with persistent sessions, branching, and MCP"
   homepage "https://github.com/Tiziano-AI/agenterm"
-  url      "https://files.pythonhosted.org/packages/44/cb/f33ee3c418720e701f8563cb6d12735366b64cdcb0b23458e0a34f59b7d1/agenterm-0.3.2.tar.gz"
-  sha256   "5b9bbb5228cd82b468a48886d7b449a96b2a68704062b7d087db1f94bd62c441"
+  url      "https://files.pythonhosted.org/packages/91/a8/88adc25a19e318453c1a0acfafee119653baa701466a58e1d278c2517d7f/agenterm-0.4.0.tar.gz"
+  sha256   "c4887cd9924fbcd547a89548748bd7e1463a95aacb40f958d38cdca000810533"
   license  "MIT"
 
   depends_on "python@3.12"

@@ -17,7 +17,7 @@ class Agenterm < Formula
     # Create virtualenv WITH pip (not Homebrew's --without-pip default)
     system Formula["python@3.12"].opt_bin/"python3.12", "-m", "venv", libexec
 
-    # Install from PyPI using pre-built wheels (fast, no compilation)
+    # Install the selected PyPI release, preferring available wheels
     system libexec/"bin/pip", "install", "--prefer-binary", "agenterm==#{version}"
 
     # Symlink the CLI entrypoint
